@@ -1,0 +1,29 @@
+/* Motion communicates interaction; informational cards deliberately stay still. */
+.btn, .mobile-toggle, .whatsapp-float { transition: background-color 160ms ease, color 160ms ease, transform 160ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover { background: var(--petrol-hover); }
+  .btn-secondary:hover { background: var(--beige-hover); }
+  .btn-light:hover { background: var(--beige); }
+  nav a:not(.btn):hover, .footer-col a:hover, .service-link:hover { text-decoration: underline; text-underline-offset: 5px; }
+  .mobile-toggle:hover { background: var(--beige); }
+  .whatsapp-float:hover { background: #115f39; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  body:not(.keyboard-input) :is(.btn, .mobile-toggle, .whatsapp-float):not(:disabled):active { transform: scale(.97); }
+  .hero.motion-enabled::before { animation: hero-orbit 18s ease-in-out infinite; }
+  .hero.motion-enabled::after { animation: hero-drift 14s ease-in-out infinite alternate; }
+  .hero.motion-paused::before, .hero.motion-paused::after { animation-play-state: paused; }
+}
+@keyframes hero-orbit {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-16px, 12px); }
+}
+@keyframes hero-drift {
+  from { transform: translate(0, 0); }
+  to { transform: translate(18px, -14px); }
+}
+body.keyboard-input :is(.btn, .mobile-toggle, .whatsapp-float) { transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .hero::before, .hero::after { animation: none; }
+  .btn, .mobile-toggle, .whatsapp-float { transition: background-color 120ms ease, color 120ms ease; }
+}

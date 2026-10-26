@@ -1,0 +1,82 @@
+/* Hero: readable mobile composition; overlays only when space permits. */
+.hero { position: relative; isolation: isolate; overflow: clip; padding: 36px 0 48px; background: linear-gradient(135deg, var(--ivory) 55%, #edf3f0); }
+.hero::before, .hero::after { content: ""; position: absolute; z-index: -1; border-radius: 50%; pointer-events: none; }
+.hero::before { width: 360px; height: 360px; top: -260px; right: -100px; background: var(--terracotta); opacity: .1; }
+.hero::after { width: 180px; height: 180px; bottom: -120px; left: -70px; background: var(--decorative); opacity: .3; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; align-items: center; }
+@media (max-width: 479px) { .doctor-site .hero-grid { gap: 20px; } }
+.hero-title-accent { display: block; color: var(--terracotta-text); }
+.hero .lead { max-width: 60ch; color: var(--text-soft); font-size: 1.0625rem; }
+.hero-actions { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
+.hero-visual { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; position: relative; }
+.photo-card { position: relative; height: 280px; overflow: hidden; border-radius: 120px 120px 24px 24px; background: var(--beige); }
+.photo-card img { width: 100%; height: 100%; object-fit: cover; }
+.floating-card { padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: white; }
+.floating-card strong { display: block; margin-bottom: 4px; font-family: "Manrope", system-ui, sans-serif; font-size: .9375rem; }
+.floating-card span { color: var(--text-soft); font-size: .875rem; line-height: 1.5; }
+.floating-card .icon-badge { display: grid; place-items: center; float: left; width: 32px; height: 32px; margin-right: 12px; border-radius: 50%; background: var(--beige); color: var(--terracotta-text); }
+.trust-strip { background: white; border-block: 1px solid var(--line); }
+.trust-inner { display: grid; gap: 16px; padding-block: 24px; }
+.trust-item { display: flex; align-items: center; gap: 12px; color: var(--text-soft); font-size: .9375rem; }
+.trust-item b { color: var(--text); }
+.benefit-card.featured { position: relative; isolation: isolate; display: flex; align-items: flex-end; min-height: 360px; overflow: hidden; background: var(--petrol-hover); color: white; }
+.feature-photo { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
+.benefit-card.featured::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(21,62,58,.3), rgba(21,62,58,.96) 75%); }
+.benefit-card.featured .card-copy { color: white; }
+.services, .faq-section { background: white; }
+.consultation-topics { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); }
+.consultation-topics h3 { font-size: clamp(1.25rem, 2.2vw, 1.5rem); }
+.help-section { background: var(--beige); }
+.topics-wrap { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
+.how { background: var(--green-soft); }
+.quote-section { background: #183f3b; color: white; }
+.quote { max-width: 1000px; font-family: "Manrope", system-ui, sans-serif; font-size: clamp(1.75rem, 3vw, 3rem); line-height: 1.3; letter-spacing: -.03em; margin-bottom: 24px; }
+.quote-meta { color: #dbe5e1; }
+.booking-shell { display: grid; grid-template-columns: minmax(0, 1fr); border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--beige); }
+.booking-copy, .booking-embed { padding: 24px; }
+.booking-copy h2 { font-size: clamp(1.75rem, 3vw, 2.75rem); }
+.booking-copy ul { margin: 24px 0 0; padding-left: 20px; color: var(--text-soft); }
+.booking-copy li { margin-block: 8px; }
+.booking-embed { display: grid; align-items: center; }
+.embed-placeholder { padding: 28px 20px; border: 1px solid var(--line); border-radius: var(--radius); background: white; color: var(--text-soft); }
+.embed-placeholder h3 { color: var(--text); }
+.embed-placeholder p:last-child { margin: 0; }
+.status-label { display: inline-block; padding: 5px 10px; margin-bottom: 16px; border-radius: 8px; background: var(--green-soft); color: var(--petrol-hover); font-size: .875rem; font-weight: 700; }
+.final-box { position: relative; isolation: isolate; padding: 32px 24px; border-radius: var(--radius-lg); background: #1b4a46; color: white; }
+.final-box h2 { max-width: 800px; }
+.final-box p { max-width: 60ch; color: #e1ebe7; }
+.final-box .btn { width: 100%; }
+@media (min-width: 480px) {
+  .trust-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-actions { flex-direction: row; flex-wrap: wrap; }
+  .hero-visual { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .photo-card { grid-column: 1 / -1; height: 360px; }
+}
+@media (min-width: 700px) {
+  .trust-inner { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .hero { padding-block: 56px; }
+  .hero-grid { gap: 40px; }
+  .hero-visual { max-width: 640px; width: 100%; margin-inline: auto; }
+  .photo-card { height: 420px; }
+  .benefit-card.featured { grid-column: 1 / -1; min-height: 380px; }
+  .benefit-card { padding: 28px; }
+  .booking-copy, .booking-embed { padding: 32px; }
+  .final-box { padding: 48px; }
+  .final-box .btn { width: auto; }
+}
+@media (min-width: 1100px) {
+  .hero { padding-block: 72px 40px; }
+  .hero::before { width: 520px; height: 520px; top: -370px; right: 5%; }
+  .hero-grid { grid-template-columns: 1.1fr .9fr; gap: 64px; }
+  .hero-visual { display: block; min-height: 510px; }
+  .photo-card { width: 92%; height: 510px; margin-inline: auto; border-radius: 160px 160px 24px 24px; }
+  .floating-card { position: absolute; max-width: 230px; box-shadow: var(--shadow); }
+  .floating-card.one { top: 36px; left: -24px; }
+  .floating-card.two { bottom: 24px; right: -12px; }
+  .trust-inner { grid-template-columns: repeat(3, minmax(0, 1fr)); padding-block: 28px; }
+  .trust-item { padding-left: 16px; border-left: 1px solid var(--line); }
+  .benefit-grid { grid-template-columns: 1.1fr 1fr 1fr; }
+  .benefit-card.featured { grid-column: auto; grid-row: span 2; }
+  .topics-wrap { grid-template-columns: 1fr 1.1fr; gap: 64px; }
+  .booking-shell { grid-template-columns: 1fr 1fr; }
+}
