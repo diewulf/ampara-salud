@@ -167,8 +167,10 @@ export default function SiteShell({ children, variant = "doctor-site" }) {
         </div>
       </footer>
       <aside className="contact-dock" aria-label="Contacto por WhatsApp">
-        <a className="whatsapp-float" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="Escribir a la Dra. Ignacia Mendoza por WhatsApp" aria-describedby="whatsapp-status"><WhatsAppIcon /></a>
-        <span className="contact-status" id="whatsapp-status">Escribir por WhatsApp</span>
+        <a className="whatsapp-float" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="Escribir a la Dra. Ignacia Mendoza por WhatsApp">
+          <span className="whatsapp-icon"><WhatsAppIcon /></span>
+          <span className="whatsapp-label" aria-hidden="true">Escríbenos</span>
+        </a>
       </aside>
       <div className="mobile-cta" hidden={!isMobile || menuOpen} ref={stickyRef}><BookingButton>Reserva aquí</BookingButton></div>
     </div>

@@ -6,7 +6,7 @@
   .btn-light:hover { background: var(--beige); }
   nav a:not(.btn):hover, .footer-col a:hover, .service-link:hover { text-decoration: underline; text-underline-offset: 5px; }
   .mobile-toggle:hover { background: var(--beige); }
-  .whatsapp-float:hover { background: #115f39; }
+  .whatsapp-float:hover { background: var(--green-soft); }
 }
 @media (prefers-reduced-motion: no-preference) {
   body:not(.keyboard-input) :is(.btn, .mobile-toggle, .whatsapp-float):not(:disabled):active { transform: scale(.97); }
