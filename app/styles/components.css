@@ -60,8 +60,8 @@ footer .brand-logo { width: 178px; filter: grayscale(1) brightness(0) invert(1);
 .crisis-note { max-width: 75ch; }
 .contact-dock { position: fixed; z-index: 70; right: max(16px, env(safe-area-inset-right)); bottom: calc(16px + env(safe-area-inset-bottom)); }
 .whatsapp-float { min-height: 56px; display: inline-flex; align-items: center; gap: 10px; padding: 5px 17px 5px 5px; border: 1px solid rgba(23, 36, 33, .12); border-radius: 999px; background: white; color: var(--petrol-hover); box-shadow: 0 8px 28px rgba(23, 36, 33, .17); font-weight: 700; line-height: 1; white-space: nowrap; }
-.whatsapp-icon { width: 44px; height: 44px; flex: none; display: grid; place-items: center; border-radius: 50%; background: #167345; color: white; }
-.whatsapp-icon svg { width: 25px; height: 25px; fill: currentColor; }
+.whatsapp-icon { width: 44px; height: 44px; flex: none; display: grid; place-items: center; }
+.whatsapp-icon img { width: 44px; height: 44px; }
 .whatsapp-label { font-size: .875rem; }
 .mobile-cta { position: fixed; z-index: 60; left: 16px; right: 16px; bottom: calc(12px + env(safe-area-inset-bottom)); }
 .mobile-cta .btn { width: 100%; box-shadow: var(--shadow); }

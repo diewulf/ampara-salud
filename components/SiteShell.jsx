@@ -20,15 +20,6 @@ export function BookingButton({ children = "Reserva aquí", className = "", onCl
   );
 }
 
-function WhatsAppIcon() {
-  return (
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-      <path d="M19.11 17.21c-.27-.14-1.58-.78-1.82-.87-.24-.09-.42-.14-.6.14-.18.27-.69.87-.84 1.05-.16.18-.31.2-.58.07-.27-.14-1.13-.42-2.15-1.33-.79-.71-1.33-1.58-1.49-1.85-.16-.27-.02-.41.12-.55.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.14-.6-1.44-.82-1.97-.22-.52-.44-.45-.6-.46h-.51c-.18 0-.47.07-.71.34-.24.27-.93.91-.93 2.22 0 1.31.96 2.58 1.09 2.76.13 1.88 2.87 4.56 4.03.64.27 1.14.44 1.53.56.64.2 1.22.17 1.68.1.51-.08 1.58-.65 1.8-1.27.22-.62.22-1.16.16-1.27-.07-.11-.24-.18-.51-.31z" />
-      <path d="M16.03 3C8.86 3 3.03 8.79 3.03 15.91c0 2.28.6 4.5 1.74 6.45L3 29l6.83-1.79a13.1 13.1 0 0 0 6.2 1.57h.01c7.17 0 13-5.79 13-12.91C29.04 8.79 23.21 3 16.03 3zm0 23.6h-.01a10.93 10.93 0 0 1-5.57-1.52l-.4-.24-4.05 1.06 1.08-3.92-.26-.4a10.63 10.63 0 0 1-1.67-5.67c0-5.94 4.88-10.77 10.89-10.77 6 0 10.88 4.83 10.88 10.77 0 5.94-4.88 10.69-10.89 10.69z" />
-    </svg>
-  );
-}
-
 export default function SiteShell({ children, variant = "doctor-site" }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -168,7 +159,7 @@ export default function SiteShell({ children, variant = "doctor-site" }) {
       </footer>
       <aside className="contact-dock" aria-label="Contacto por WhatsApp">
         <a className="whatsapp-float" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="Escribir a la Dra. Ignacia Mendoza por WhatsApp">
-          <span className="whatsapp-icon"><WhatsAppIcon /></span>
+          <span className="whatsapp-icon"><img src="/assets/whatsapp-color-svgrepo-com.svg" width="44" height="44" alt="" /></span>
           <span className="whatsapp-label" aria-hidden="true">Escríbenos</span>
         </a>
       </aside>
