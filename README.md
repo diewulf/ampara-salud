@@ -38,4 +38,3 @@ npm run verify
 El botón oficial de Encuadrado usa la URL `https://encuadrado.com/p/ignacia-mendoza/s/atencion-medica-en-salud-mental/embed/popup` y el script `https://encuadrado.com/p/embed.js`. WhatsApp apunta a `https://wa.me/56932266295`. Las reservas y pagos ocurren fuera de esta web.
 
 Antes de publicar, revisar [VALIDACION-PREVIA-PUBLICACION.md](./VALIDACION-PREVIA-PUBLICACION.md), confirmar la operación de hosting y validar jurídicamente los textos informativos.
-
